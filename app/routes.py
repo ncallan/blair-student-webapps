@@ -1,6 +1,6 @@
 from app import app
 
 @app.route('/')
-@app.route('/index')
-def index():
-    return "<html><head><meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\"><link href=\"https://fonts.googleapis.com/css?family=B612+Mono:400,700\" rel=\"stylesheet\"></head><body><div id=\"media\"><span>Media</span></div><div id=\"links\"><span>Links</span></div><div id=\"stocks\"><span>Stocks</span><div id=\"stocks-summary\"></div><div id=\"stocks-graph\"></div></div><div id=\"dev\"><span>Dev</span></div><div id=\"weather\"><span>Weather</span></div><div id=\"todo\"><span>To Do</span></div></body><style type=\"text/css\">:root {--main-bg-color: #120030;--main-text-color: #ccc;}html {background-color: var(--main-bg-color);color: var(--main-text-color);font-family: 'B612 Mono', monospace;}body {margin: 0;padding: 16px;box-sizing: border-box;display: grid;grid-gap: 16px;grid-template-columns: 1fr 1fr 2.5fr;grid-template-rows: 1fr 0.5fr 0.5fr 1fr;height: 100%;}body > div {position: relative;padding: 8px;border: 2px solid var(--main-text-color);border-radius: 8px;}body > div > span {position: absolute;top: -11px;left: 8px;padding: 0 5px;background-color: var(--main-bg-color);}*::selection {background-color: #C96480;color: #23005d;}.pos {background: no-repeat left url(\"pos.svg\");padding-left: 18px;color: #2ECC40;}.neg {background: no-repeat left url(\"neg.svg\");padding-left: 18px;color: #FF4136;}#stocks {grid-area: 1 / 3 / 3 / 4;display: grid;grid-template-columns: 1fr 3fr;padding: 0;}#dev {grid-area:2 / 1 / 4 / 3;}#weather {grid-area: 3 / 3 / 5 / 4;}#todo {grid-area: 4 / 1 / 5 / 3;}#stocks-summary {border-right: 2px solid var(--main-text-color);padding: 8px;min-width: 150px;max-width: 200px;}</style></html>"
+@app.route('/<name>')
+def index(name="boi"):
+    return name
