@@ -1,6 +1,6 @@
 from app import app, db
 
-def ohgodnotinprod(value)
+def ohgodnotinprod(value):
     HTMLStart = "<html><body style=\"background-color: #202; color: #fff;\"><center><code>"
     HTMLEnd = "</code></center></body></html>"
     return HTMLStart + str(value) + HTMLEnd
@@ -10,8 +10,8 @@ def ohgodnotinprod(value)
 @app.route('/<what>/<where>')
 @app.route('/select/<what>/<where>')
 def index(what="*", where="jsonData"):
-    return ohgodnotinprod(db.query("SELECT :what FROM :where", what=what, where=where).export("html"))
+    return ohgodnotinprod(db.query("SELECT :what FROM :where", what=what, where=where).as_dict())
 
 @app.route('/explain/<what>/<where>')
 def index(what="*", where="jsonData"):
-    return ohgodnotinprod(db.query("EXPLAIN SELECT :what FROM :where", what=what, where=where).export("html"))
+    return ohgodnotinprod(db.query("EXPLAIN SELECT :what FROM :where", what=what, where=where).as_dict())
