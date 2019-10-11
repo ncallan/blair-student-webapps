@@ -15,3 +15,11 @@ def select(what="*", where="jsonData"):
 @app.route('/explain/<what>/<where>')
 def explain(what="*", where="jsonData"):
     return ohgodnotinprod(db.query("EXPLAIN SELECT :what FROM :where", what=what, where=where).as_dict())
+
+@app.route("/sms")
+    return """
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+    <Message>We got your message, thank you!</Message>
+</Response>
+"""
