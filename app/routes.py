@@ -21,6 +21,6 @@ def sms():
     return """
 <?xml version="1.0" encoding="UTF-8"?>
 <Response>
-    <Message>""" + str(response.form) + """</Message>
+    <Media>""" + str("https://img.ifunny.co/images/b685b26cb8d1c4563636a5becdfbce6a064d3ecdff2f34cf14a84bbfbbc4b97d_1.jpg") + """</Media>
 </Response>
 """
