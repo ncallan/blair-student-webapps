@@ -17,8 +17,8 @@ def explain(what="*", where="jsonData"):
     return ohgodnotinprod(db.query("EXPLAIN SELECT :what FROM :where", what=what, where=where).as_dict())
 
 @app.route("/sms")
-    def sms():
-        return """
+def sms():
+    return """
 <?xml version="1.0" encoding="UTF-8"?>
 <Response>
     <Message>""" + str(response.form) + """</Message>
