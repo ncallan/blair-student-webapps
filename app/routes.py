@@ -6,7 +6,10 @@ def ohgodnotinprod(value):
     return HTMLStart + str(value) + HTMLEnd
 
 
-@app.route('/')
+@app.route('/<name>')
+def index(name):
+    return ohgodnotinprod("Hi " + name + ".")
+
 @app.route('/<what>/<where>')
 @app.route('/select/<what>/<where>')
 def select(what="*", where="jsondata"):
